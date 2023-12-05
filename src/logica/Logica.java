@@ -10,7 +10,7 @@ public class Logica {
         Random rand = new Random();
 
         for (int i = 0; i < cantidadNumeros; i++) {
-            int numeroAleatorio = rand.nextInt(200);
+            int numeroAleatorio = rand.nextInt(500);
             listaNumeros.add(numeroAleatorio);
         }
 
@@ -35,17 +35,22 @@ public class Logica {
     }//CIERRE DEL METODO
 
     public ArrayList<Integer> ordenamientoSeleccion(ArrayList<Integer> arr) {
-        int menor = 100;
-        for (Integer elemento : arr) {
-            for (Integer elemento1 : arr) {
-                if (elemento1 < menor) {
-                    menor = elemento1;
+        int n = arr.size();
+
+        for (int i = 0; i < n - 1; i++) {
+            int indiceMinimo = i;
+            for (int j = i + 1; j < n; j++) {
+                if (arr.get(j) < arr.get(indiceMinimo)) {
+                    indiceMinimo = j;
                 }
             }
-            arr.set(0, menor);
+            int temp = arr.get(indiceMinimo);
+            arr.set(indiceMinimo, arr.get(i));
+            arr.set(i, temp);
         }
+        
         return arr;
-
+        
     }//CIERRE DEL METODO
 
     public ArrayList<Integer> quickSort(ArrayList<Integer> arr) {

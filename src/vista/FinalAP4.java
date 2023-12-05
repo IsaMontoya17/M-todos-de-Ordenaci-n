@@ -40,20 +40,31 @@ public class FinalAP4 {
                     System.out.println("Tiempo de ejecución: " + tiempoEjecucion + " milisegundos");
                     break;
                 case 2:
+                    inicio = System.currentTimeMillis();
                     arr = logica.ordenamientoSeleccion(arr);
+                    fin = System.currentTimeMillis();
                     imprimirArraylist(arr);
+                    tiempoEjecucion = fin - inicio;
+                    System.out.println("Tiempo de ejecución: " + tiempoEjecucion + " milisegundos");
                     break;
                 case 3:
+                    inicio = System.currentTimeMillis();
                     arr = logica.quickSort(arr);
+                    fin = System.currentTimeMillis();
                     imprimirArraylist(arr);
+                    tiempoEjecucion = fin - inicio;
+                    System.out.println("Tiempo de ejecución: " + tiempoEjecucion + " milisegundos");
                     break;
                 case 4:
+                    inicio = System.currentTimeMillis();
                     arr = logica.mergeSort(arr);
+                    fin = System.currentTimeMillis();
                     imprimirArraylist(arr);
+                    tiempoEjecucion = fin - inicio;
+                    System.out.println("Tiempo de ejecución: " + tiempoEjecucion + " milisegundos");
                     break;
                 case 5:
                     imprimirArraylist(arr);
-                    imprimirPorConsola(arr);
                     break;
                 default:
             }
